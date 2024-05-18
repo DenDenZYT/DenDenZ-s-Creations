@@ -1,4 +1,11 @@
-setfpscap(200)
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/Key%20System%20UI/Library.lua"))()
+
+Lib.CreateUI({
+    Title = "Atreus Hub - Key System",
+    KeyUrl = "https://link-hub.net/966464/official-atreus-hub-key",
+    Key = "ATREUSREVIVAL",
+    Callback = function()
+        setfpscap(200)
 
 local Stats = game:GetService('Stats')
 local Players = game:GetService('Players')
@@ -95,7 +102,6 @@ local function get_closest_entity(Object: Part)
     end)
 end
 
---// Thanks Aries for this.
 function resolve_parry_Remote()
     for _, value in Services do
         local temp_remote = value:FindFirstChildOfClass('RemoteEvent')
@@ -283,8 +289,6 @@ Main:AddToggle({
 end
 })
 
---// night-mode
-
 task.defer(function()
     while task.wait(1) do
         if getgenv().night_mode_Enabled then
@@ -294,8 +298,6 @@ task.defer(function()
         end
     end
 end)
-
---// aura
 
 task.spawn(function()
     RunService.PreRender:Connect(function()
@@ -416,5 +418,5 @@ end)
 
 
 initializate('nurysium_temp')
-
-OrionLib:Init()
+    end
+})
